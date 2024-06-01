@@ -1,0 +1,201 @@
+body{
+  background: #FFDCE9;
+}
+
+/* карточки ивентов */
+.event_cards {
+  position: absolute;
+  top: 5vw;
+  width: auto;
+  height: 32vw;
+  transition: all 1s cubic-bezier(0.42, 0, 0.28, 1.45);
+  display: inline-flex;
+  transform: translateX(-1vw);
+}
+.bt, .meditation, .fluid_art, .gadaniya {
+  box-sizing: border-box;
+  margin: 0 1vw;
+  width: 32vw;
+  height: 32vw;
+  background-color: #ffffff;
+}
+/* анимации карточек */
+.meditation {
+  animation: meditation 15s linear infinite;
+  background-size: contain;
+  animation-play-state: running;
+}
+.meditation .darken {
+  opacity: 0;
+}
+@keyframes meditation {
+  0% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  27% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  30% {background-image: url(../img/icons8-cat-100.png);opacity: 0}
+  33% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  60% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  63% {background-image: url(../img/icons8-cat-100.png);opacity: 0}
+  66% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  93% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  96% {background-image: url(../img/icons8-cat-100.png);opacity: 0}
+  100% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+}
+.bt {
+  animation: bt 15s linear infinite;
+  background-size: contain;
+    animation-play-state: paused;
+}
+@keyframes bt {
+  0% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  27% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  30% {background-image: url(../img/icons8-cat-100.png);opacity: 0}
+  33% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  60% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  63% {background-image: url(../img/icons8-cat-100.png);opacity: 0}
+  66% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  93% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  96% {background-image: url(../img/icons8-cat-100.png);opacity: 0}
+  100% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+}
+.gadaniya {
+  animation: gadaniya 15s linear infinite;
+  background-size: contain;
+    animation-play-state: paused;
+}
+@keyframes gadaniya {
+  0% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  27% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  30% {background-image: url(../img/icons8-cat-100.png);opacity: 0}
+  33% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  60% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  63% {background-image: url(../img/icons8-cat-100.png);opacity: 0}
+  66% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  93% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  96% {background-image: url(../img/icons8-cat-100.png);opacity: 0}
+  100% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+}
+.fluid_art {
+  animation: fluid_art 15s linear infinite;
+  background-size: contain;
+    animation-play-state: paused;
+}
+@keyframes fluid_art {
+  0% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  27% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  30% {background-image: url(../img/icons8-cat-100.png);opacity: 0}
+  33% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  60% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  63% {background-image: url(../img/icons8-cat-100.png);opacity: 0}
+  66% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  93% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+  96% {background-image: url(../img/icons8-cat-100.png);opacity: 0}
+  100% {background-image: url(../img/icons8-cat-100.png);opacity: 1}
+}
+/* крутящийся текст */
+.event_text {
+  position: absolute;
+  bottom: -22vw;
+  width: 34vw;
+  height: 34vw;
+  left:33%;
+  transform:rotate(-95deg) ;
+  transition: all 1s cubic-bezier(0.42, 0, 0.28, 1.45);
+}
+.event_text img {
+  width: 100%;
+  height: 100%;
+}
+/* маски, создающие выпуклый эффект */
+.mask {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+.mask img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+.mask img:first-of-type {
+  top:0vw;
+}
+.mask img:last-of-type {
+  bottom:-1vw;
+}
+/* кнопки вперед, назад */
+.previous, .next {
+  position: absolute;
+  width: 5vw;
+  height: 5vw;
+  background-color: #DEFFFF;
+  border-radius: 40vw;
+  border: solid #FF7596 0.15vw;
+  transition: all 0.7s ease-out;
+  color: #FF7596;
+  font-size: 2vw;
+  cursor: url('../img/icons8-arrow-64.png'), auto; 
+  /* картинка ховер при наведении на стрелки */
+}
+.previous img, .next img {
+  width: 40%;
+  height: 40%;
+}
+.previous {
+  left:1vw;
+  top: 40%;
+}
+.next {
+  right:1vw;
+  top: 40%;
+  transform: rotate(180deg);
+}
+/* цветовой фильтр, накладывающийся на неактивные карточки */
+.darken {
+  width: 100%;
+  height: 100%;
+  transition: all 0.7s ease-out;
+  background: #FFDCE9;
+  mix-blend-mode: color;
+}
+
+/* заполняющая кнопку жидкость */
+.wavefill {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin-top: 110%;
+  margin-left: -30vw;
+  transition: all 1s ease-out;
+}
+.wavefill img {
+  position: absolute;
+  height: 110%;
+  width: auto;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.registration:hover .wavefill {
+  margin-top: 0;
+  margin-left: 0;
+  transition: all 0.7s ease-out;
+}
+
+
+.positionmask{
+  position: fixed;
+  pointer-events: none;
+  z-index: 20;
+  margin-top: -2%;
+}
+
+.positionmask2{
+  position: fixed;
+  pointer-events: none;
+  z-index: 20;
+  margin-top: 30%;
+}
+
+.maskiii{
+  width: 100%;
+}
